@@ -4,12 +4,15 @@
     <meta charset="utf-8">
     <title>Revellison</title>
   </head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
   <body>
     <header>
             <div class="logo">REVELLISON</div>
-            <nav>
+            <nav class="navigation">
                 <a href="#portfolio">Портфолио</a>
                 <a href="#solutions">Готовые решения</a>
                 <a href="#contact">Связь</a>
@@ -17,14 +20,34 @@
         </header>
 
         <section class="hero">
-            <h1>Привет!</h1>
-            <p>Я создаю современные сайты, стильную инфографику, эффективные скрипты и занимаюсь видеомонтажом.</p>
+          <div class="left-content">
+            <h1 id="hello">Привет!</h1>
+            <p id="helloP">Я создаю современные сайты, стильную инфографику, эффективные скрипты и занимаюсь видеомонтажом.</p>
             <div class="tags">
-                <div class="tag">Быстро</div>
-                <div class="tag">Дешево</div>
-                <div class="tag">Надежно</div>
-                <div class="tag">Креативно</div>
+              <div class="tagsup">
+                <div class="tag">
+                  <img src="media\icons\page_1\tag1.svg" alt="Быстро">
+                </div>
+                <div class="tag">
+                  <img src="media\icons\page_1\tag2.svg" alt="Дешево">
+                </div>
+              </div>
+              <div class="tagsdown">
+                <div class="tag">
+                  <img src="media\icons\page_1\tag3.svg" alt="Надёжно">
+                </div>
+                <div class="tag">
+                  <img src="media\icons\page_1\tag4.svg" alt="Креативно">
+                </div>
+              </div>
             </div>
+          </div>
+          <div class="right-content">
+            <div class="avatar">
+              <img src="media\images\avatar.svg" alt="Revellison" class="base-avatar">
+              <img src="media\images\avatar_restangle.svg" class="overlay-avatar">
+            </div>
+          </div>
         </section>
 
         <section class="section" id="portfolio">

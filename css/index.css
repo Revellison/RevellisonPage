@@ -1,14 +1,181 @@
 @font-face {
-	font-family: 'IntegralCF-Bold';
-	src: url('../fonts/integralcf-bold.eot'); /* IE 9 Compatibility Mode */
-	src: url('../fonts/integralcf-bold.eot?#iefix') format('embedded-opentype'), /* IE < 9 */
-		url('../fonts/integralcf-bold.woff2') format('woff2'), /* Super Modern Browsers */
-		url('../fonts/integralcf-bold.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */
-		url('../fonts/integralcf-bold.ttf') format('truetype'), /* Safari, Android, iOS */
-		url('../fonts/integralcf-bold.svg#integralcf-bold') format('svg'); /* Chrome < 4, Legacy iOS */
+  font-family: 'IntegralCF-Bold';
+  src: url('../fonts/integralcf-bold.eot'); /* IE 9 Compatibility Mode */
+  src: url('../fonts/integralcf-bold.eot?#iefix') format('embedded-opentype'), /* IE < 9 */
+    url('../fonts/integralcf-bold.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/integralcf-bold.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */
+    url('../fonts/integralcf-bold.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/integralcf-bold.svg#integralcf-bold') format('svg'); /* Chrome < 4, Legacy iOS */
+}
+
+body {
+  font-family: "Inter", sans-serif; 
+  background-color: #F0F0FF;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  user-select: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px 10px 10px;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.left-content {
+  flex: 1;
+}
+
+.right-content {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 50px;
+}
+
+#hello {
+  font-size: 48px;
+  user-select: none;
+  margin-left: 20px;
+}
+
+#helloP {
+  font-size: 28px;
+  user-select: none;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.tags {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.avatar {
+  position: relative;
+  width: 260px;
+  height: 260px;
+  margin-left: 20%;
+}
+
+.avatar img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.avatar .overlay-avatar {
+  width: 92%;
+  height: 92%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .logo {
-  	font-family: 'IntegralCF-Bold', sans-serif;
-    font-size: 32px;
+  font-family: 'IntegralCF-Bold', sans-serif;
+  font-size: 32px;
+  margin-right: 10px;
+}
+.tags, .skills {
+  font-family: "Rubik", sans-serif;
+}
+
+.tags {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.tagsup, .tagsdown {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tagsup .tag, .tagsdown .tag {
+  margin: 10px;
+  margin-top: 0px;
+  flex: 1 0 40%;
+}
+
+.tagsdown {
+  margin-left: 20px;
+}
+.tag {
+	width: 180px;
+	height: 45px;
+}
+
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .logo {
+    margin-bottom: 10px;
+  }
+
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .right-content {
+    justify-content: center;
+    margin-right: 0;
+    margin-top: 20px;
+  }
+
+  .avatar {
+    margin-left: 0;
+    width: 100%;
+    height: auto;
+  }
+
+  #hello, #helloP {
+    margin-left: 0;
+  }
+
+  .tags {
+    margin-left: 0;
+  }
+
+	.tagsup .tag, .tagsdown .tag {
+	  width: 180px;
+	  height: 45px;
+	  display: inline-block;
+	  margin: 10px 0;
+	}
+
+	.tags img {
+	  width: 80%;
+	  height: 100%;
+	  object-fit: cover;
+	}
+
+@media (max-width: 480px) {
+  #hello {
+    font-size: 36px;
+  }
+
+  #helloP {
+    font-size: 24px;
+  }
+
+	.tagsup .tag, .tagsdown .tag {
+    margin: 5px 0;
+  }
 }
