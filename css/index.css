@@ -1,0 +1,14 @@
+@font-face {
+	font-family: 'IntegralCF-Bold';
+	src: url('../fonts/integralcf-bold.eot'); /* IE 9 Compatibility Mode */
+	src: url('../fonts/integralcf-bold.eot?#iefix') format('embedded-opentype'), /* IE < 9 */
+		url('../fonts/integralcf-bold.woff2') format('woff2'), /* Super Modern Browsers */
+		url('../fonts/integralcf-bold.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */
+		url('../fonts/integralcf-bold.ttf') format('truetype'), /* Safari, Android, iOS */
+		url('../fonts/integralcf-bold.svg#integralcf-bold') format('svg'); /* Chrome < 4, Legacy iOS */
+}
+
+.logo {
+  	font-family: 'IntegralCF-Bold', sans-serif;
+    font-size: 32px;
+}
