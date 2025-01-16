@@ -9,9 +9,9 @@
 }
 
 body {
-  font-family: "Inter", sans-serif; 
+  font-family: "Inter", sans-serif; /* Исправлено на sans-serif, так как Inter - шрифт без засечек */
   background-color: #F0F0FF;
-  margin: 0;
+  margin: 0; /* Убираем отступы по умолчанию */
   padding: 0;
 }
 
@@ -63,7 +63,7 @@ header {
   position: relative;
   width: 260px;
   height: 260px;
-  margin-left: 20%;
+  margin-left: 40%; /* Это может быть слишком большим значением для мобильных устройств */
 }
 
 .avatar img {
@@ -88,7 +88,7 @@ header {
   margin-right: 10px;
 }
 .tags, .skills {
-  font-family: "Rubik", sans-serif;
+  font-family: "Rubik", sans-serif; /* Исправлено на sans-serif */
 }
 
 .tags {
@@ -99,13 +99,13 @@ header {
 
 .tagsup, .tagsdown {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* Разрешает перенос тегов на новую строку при уменьшении ширины */
 }
 
 .tagsup .tag, .tagsdown .tag {
   margin: 10px;
   margin-top: 0px;
-  flex: 1 0 40%;
+  flex: 1 0 40%; /* Для равномерного распределения тегов */
 }
 
 .tagsdown {
@@ -116,7 +116,7 @@ header {
 	height: 45px;
 }
 
-
+/* Адаптивность для мобильных устройств */
 @media (max-width: 768px) {
   header {
     flex-direction: column;
@@ -141,8 +141,8 @@ header {
 
   .avatar {
     margin-left: 0;
-    width: 100%;
-    height: auto;
+    width: 100%; /* Адаптируем ширину аватара для мобильных устройств */
+    height: auto; /* Сохраняем пропорции */
   }
 
   #hello, #helloP {
@@ -154,18 +154,16 @@ header {
   }
 
 	.tagsup .tag, .tagsdown .tag {
-	  width: 180px;
-	  height: 45px;
-	  display: inline-block;
-	  margin: 10px 0;
-	}
-
+     margin: 5px 0; /* Уменьшаем отступы для мобильных устройств */
+   }
+ }
 	.tags img {
-	  width: 80%;
-	  height: 100%;
-	  object-fit: cover;
+	  /* Убираем фиксированные размеры */
+	  width: auto;
+	  height: auto;
 	}
 
+/* Дополнительные адаптации для еще меньших экранов */
 @media (max-width: 480px) {
   #hello {
     font-size: 36px;
@@ -176,6 +174,6 @@ header {
   }
 
 	.tagsup .tag, .tagsdown .tag {
-    margin: 5px 0;
+    margin: 5px 0; /* Сохраняем уменьшенные отступы для очень маленьких экранов */
   }
 }
