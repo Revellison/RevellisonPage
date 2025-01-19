@@ -1,17 +1,46 @@
+@keyframes rotateImage {
+  0% {
+    transform: rotate(-9deg); /* Начальная позиция */
+  }
+  100% {
+    transform: rotate(0deg); /* Возврат в исходное положение */
+  }
+}
+
+
 @font-face {
   font-family: 'IntegralCF-Bold';
   src: url('../fonts/integralcf-bold.eot'); /* IE 9 Compatibility Mode */
-  src: url('../fonts/integralcf-bold.eot?#iefix') format('embedded-opentype'), /* IE < 9 */
-    url('../fonts/integralcf-bold.woff2') format('woff2'), /* Super Modern Browsers */
-    url('../fonts/integralcf-bold.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */
-    url('../fonts/integralcf-bold.ttf') format('truetype'), /* Safari, Android, iOS */
-    url('../fonts/integralcf-bold.svg#integralcf-bold') format('svg'); /* Chrome < 4, Legacy iOS */
+  src: url('../fonts/integralcf-bold.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/integralcf-bold.woff2') format('woff2'),
+       url('../fonts/integralcf-bold.woff') format('woff'),
+       url('../fonts/integralcf-bold.ttf') format('truetype'),
+       url('../fonts/integralcf-bold.svg#integralcf-bold') format('svg');
+  font-display: swap; /* Оптимизация загрузки шрифта */
+}
+html {
+  scrollbar-color: #F0F0FF #F0F0FF; /* цвет бегунка и фона полосы прокрутки */
+  scrollbar-width: thin; /* делает полосу тоньше */
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  margin-left: 10px;
+  margin-right: 10px;
+  transform: translateY(0);
+  transition: all 0.3s;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: cadetblue;
 }
 
 body {
-  font-family: "Inter", sans-serif; /* Исправлено на sans-serif, так как Inter - шрифт без засечек */
+  font-family: "Inter", sans-serif;
   background-color: #F0F0FF;
-  margin: 0; /* Убираем отступы по умолчанию */
+  margin: 0;
   padding: 0;
 }
 
@@ -27,51 +56,67 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  min-height: 100vh; /* на всю высоту viewport */
+  padding-left: 15%;
+  gap: 0;
+  flex-wrap: wrap; /* Добавление переноса строк для мобильных устройств */
+  box-sizing: border-box; /* Учет размера элемента с учетом padding и border */
+  padding-bottom: 150px;
+  padding-right: 10%;
 }
 
-.left-content {
+.left-content,
+.right-content {
   flex: 1;
+}
+
+.left-content h1 {
+  margin: 0;
 }
 
 .right-content {
-  flex: 1;
   display: flex;
   justify-content: flex-end;
-  margin-right: 50px;
+  margin-right: 15%;
 }
 
 #hello {
-  font-size: 48px;
+  font-size: clamp(40px, 7vw, 64px); /* Увеличение размера шрифта */
   user-select: none;
   margin-left: 20px;
 }
 
 #helloP {
-  font-size: 28px;
+  font-size: clamp(32px, 5vw, 32px); /* Увеличение размера шрифта */
   user-select: none;
   margin-left: 20px;
   margin-top: 10px;
+  width: 600px;
 }
 
-.tags {
-  margin-top: 20px;
-  margin-left: 20px;
+.base-avatar {
+  animation: rotateImage 1s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
-
 .avatar {
   position: relative;
-  width: 260px;
-  height: 260px;
-  margin-left: 40%; /* Это может быть слишком большим значением для мобильных устройств */
+  width: 300px; /* Увеличиваем размер */
+  height: 300px;
+  margin-left: 20%;
+  aspect-ratio: 1; /* Сохранение пропорций */
+
+}
+
+.avatar img,
+.avatar .overlay-avatar {
+  position: absolute;
 }
 
 .avatar img {
-  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  object-fit: cover; /* Улучшенное масштабирование изображения */
 }
 
 .avatar .overlay-avatar {
@@ -84,48 +129,134 @@ header {
 
 .logo {
   font-family: 'IntegralCF-Bold', sans-serif;
-  font-size: 32px;
+  font-size: clamp(26px, 5vw, 26px); /* Увеличение размера шрифта */
   margin-right: 10px;
 }
+
 .tags, .skills {
-  font-family: "Rubik", sans-serif; /* Исправлено на sans-serif */
+  font-family: "Rubik", sans-serif;
 }
 
 .tags {
   display: flex;
   flex-direction: column;
-
+  gap: 10px; /* Увеличиваем отступ между элементами */
+  margin-top: 20px;
+  margin-left: 10px;
 }
 
 .tagsup, .tagsdown {
   display: flex;
-  flex-wrap: wrap; /* Разрешает перенос тегов на новую строку при уменьшении ширины */
-}
-
-.tagsup .tag, .tagsdown .tag {
-  margin: 10px;
-  margin-top: 0px;
-  flex: 1 0 40%; /* Для равномерного распределения тегов */
+  flex-wrap: wrap;
+  gap: 15px; /* Увеличиваем отступы */
 }
 
 .tagsdown {
   margin-left: 20px;
-}
-.tag {
-	width: 180px;
-	height: 45px;
+  gap: 25px;
 }
 
-/* Адаптивность для мобильных устройств */
+.tag {
+  width: 180px; /* Увеличиваем ширину */
+  height: 50px; /* Увеличиваем высоту */
+  display: flex;
+  justify-content: center; /* Центрируем изображение по горизонтали */
+  align-items: center; /* Центрируем изображение по вертикали */
+}
+
+.tags img {
+  width: 220px; /* Увеличиваем ширину для всех картинок */
+  height: 50px; /* Увеличиваем высоту */
+  object-fit: contain; /* Сохраняет пропорции изображения внутри контейнера */
+}
+
+.avatar-with-icons {
+  position: relative;
+}
+
+.fly-icons {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 320px;  /* Размер контейнера с иконками */
+  height: 320px;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%; /* Сделать круг */
+  flex-wrap: wrap;
+}
+
+.fly-icon {
+  width: auto;
+  height: auto;
+  position: absolute;
+  opacity: 0;
+  animation: fly 1s forwards; /* Анимация для иконок */
+}
+
+/* Анимация появления и вылета */
+@keyframes fly {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--x), var(--y));
+    opacity: 1;
+  }
+}
+
+/* Настройка для разных иконок, чтобы они вылетали в разные стороны */
+
+/* Иконка 1: Вылетает в верхний левый угол */
+.fly-icon:nth-child(1) {
+  --x: 150px;
+  --y: -200px;
+}
+
+.fly-icon:nth-child(2) {
+  --x: 290px;
+  --y: -100px;
+}
+
+/* Иконка 3: Вылетает в нижний правый угол */
+.fly-icon:nth-child(3) {
+  --x: -125px;
+  --y: 160px;
+}
+
+/* Иконка 4: Вылетает в нижний левый угол */
+.fly-icon:nth-child(4) {
+  --x: 270px;
+  --y: 40px;
+}
+
+/* Иконка 5: Вылетает вверх */
+.fly-icon:nth-child(5) {
+  --x: 200px;
+  --y: 190px;
+}
+
+/* Иконка 6: Вылетает вниз */
+.fly-icon:nth-child(6) {
+  --x: -180px;
+  --y: -30px;
+}
+
+/* Иконка 6: Вылетает вниз */
+.fly-icon:nth-child(7) {
+  --x: -90px;
+  --y: -190px;
+}
+
+
 @media (max-width: 768px) {
   header {
     flex-direction: column;
     align-items: flex-start;
     padding: 10px;
-  }
-
-  .logo {
-    margin-bottom: 10px;
   }
 
   .hero {
@@ -134,46 +265,17 @@ header {
   }
 
   .right-content {
-    justify-content: center;
     margin-right: 0;
     margin-top: 20px;
   }
 
   .avatar {
     margin-left: 0;
-    width: 100%; /* Адаптируем ширину аватара для мобильных устройств */
-    height: auto; /* Сохраняем пропорции */
+    width: 100%;
+    max-width: 320px; /* Ограничение максимальной ширины */
   }
 
-  #hello, #helloP {
+  #hello, #helloP, .tags {
     margin-left: 0;
-  }
-
-  .tags {
-    margin-left: 0;
-  }
-
-	.tagsup .tag, .tagsdown .tag {
-     margin: 5px 0; /* Уменьшаем отступы для мобильных устройств */
-   }
- }
-	.tags img {
-	  /* Убираем фиксированные размеры */
-	  width: auto;
-	  height: auto;
-	}
-
-/* Дополнительные адаптации для еще меньших экранов */
-@media (max-width: 480px) {
-  #hello {
-    font-size: 36px;
-  }
-
-  #helloP {
-    font-size: 24px;
-  }
-
-	.tagsup .tag, .tagsdown .tag {
-    margin: 5px 0; /* Сохраняем уменьшенные отступы для очень маленьких экранов */
   }
 }
