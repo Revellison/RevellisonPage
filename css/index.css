@@ -81,13 +81,13 @@ header {
 }
 
 #hello {
-  font-size: clamp(40px, 7vw, 64px); /* Увеличение размера шрифта */
+  font-size: clamp(40px, 7vw, 64px); 
   user-select: none;
   margin-left: 20px;
 }
 
 #helloP {
-  font-size: clamp(32px, 5vw, 32px); /* Увеличение размера шрифта */
+  font-size: clamp(32px, 5vw, 32px); 
   user-select: none;
   margin-left: 20px;
   margin-top: 10px;
@@ -99,10 +99,10 @@ header {
 }
 .avatar {
   position: relative;
-  width: 300px; /* Увеличиваем размер */
+  width: 300px; 
   height: 300px;
   margin-left: 20%;
-  aspect-ratio: 1; /* Сохранение пропорций */
+  aspect-ratio: 1; 
 
 }
 
@@ -116,7 +116,7 @@ header {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Улучшенное масштабирование изображения */
+  object-fit: cover; 
 }
 
 .avatar .overlay-avatar {
@@ -129,7 +129,7 @@ header {
 
 .logo {
   font-family: 'IntegralCF-Bold', sans-serif;
-  font-size: clamp(26px, 5vw, 26px); /* Увеличение размера шрифта */
+  font-size: clamp(26px, 5vw, 26px);
   margin-right: 10px;
 }
 
@@ -140,7 +140,7 @@ header {
 .tags {
   display: flex;
   flex-direction: column;
-  gap: 10px; /* Увеличиваем отступ между элементами */
+  gap: 10px; 
   margin-top: 20px;
   margin-left: 10px;
 }
@@ -148,7 +148,7 @@ header {
 .tagsup, .tagsdown {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px; /* Увеличиваем отступы */
+  gap: 15px; 
 }
 
 .tagsdown {
@@ -157,17 +157,17 @@ header {
 }
 
 .tag {
-  width: 180px; /* Увеличиваем ширину */
-  height: 50px; /* Увеличиваем высоту */
+  width: 180px; 
+  height: 50px; 
   display: flex;
-  justify-content: center; /* Центрируем изображение по горизонтали */
-  align-items: center; /* Центрируем изображение по вертикали */
+  justify-content: center; 
+  align-items: center; 
 }
 
 .tags img {
-  width: 220px; /* Увеличиваем ширину для всех картинок */
-  height: 50px; /* Увеличиваем высоту */
-  object-fit: contain; /* Сохраняет пропорции изображения внутри контейнера */
+  width: 220px; 
+  height: 50px; 
+  object-fit: contain; 
 }
 
 .avatar-with-icons {
@@ -178,13 +178,13 @@ header {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 320px;  /* Размер контейнера с иконками */
+  width: 320px;  
   height: 320px;
   transform: translate(-50%, -50%);
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 50%; /* Сделать круг */
+  border-radius: 50%; 
   flex-wrap: wrap;
 }
 
@@ -193,10 +193,10 @@ header {
   height: auto;
   position: absolute;
   opacity: 0;
-  animation: fly 1s forwards; /* Анимация для иконок */
+  animation: fly 1s forwards; 
 }
 
-/* Анимация появления и вылета */
+
 @keyframes fly {
   0% {
     transform: translate(0, 0);
@@ -208,9 +208,7 @@ header {
   }
 }
 
-/* Настройка для разных иконок, чтобы они вылетали в разные стороны */
 
-/* Иконка 1: Вылетает в верхний левый угол */
 .fly-icon:nth-child(1) {
   --x: 150px;
   --y: -200px;
@@ -221,31 +219,26 @@ header {
   --y: -100px;
 }
 
-/* Иконка 3: Вылетает в нижний правый угол */
 .fly-icon:nth-child(3) {
   --x: -125px;
   --y: 160px;
 }
 
-/* Иконка 4: Вылетает в нижний левый угол */
 .fly-icon:nth-child(4) {
   --x: 270px;
   --y: 40px;
 }
 
-/* Иконка 5: Вылетает вверх */
 .fly-icon:nth-child(5) {
   --x: 200px;
   --y: 190px;
 }
 
-/* Иконка 6: Вылетает вниз */
 .fly-icon:nth-child(6) {
   --x: -180px;
   --y: -30px;
 }
 
-/* Иконка 6: Вылетает вниз */
 .fly-icon:nth-child(7) {
   --x: -90px;
   --y: -190px;
@@ -272,7 +265,7 @@ header {
   .avatar {
     margin-left: 0;
     width: 100%;
-    max-width: 320px; /* Ограничение максимальной ширины */
+    max-width: 320px; 
   }
 
   #hello, #helloP, .tags {
