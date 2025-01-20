@@ -1,3 +1,4 @@
+/* Base styles */
 @keyframes rotateImage {
   0% {
     transform: rotate(-9deg); /* Начальная позиция */
@@ -7,6 +8,27 @@
   }
 }
 
+@keyframes fadeDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeDown2 {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 @font-face {
   font-family: 'IntegralCF-Bold';
@@ -18,23 +40,10 @@
        url('../fonts/integralcf-bold.svg#integralcf-bold') format('svg');
   font-display: swap; /* Оптимизация загрузки шрифта */
 }
+
 html {
-  scrollbar-color: #F0F0FF #F0F0FF; /* цвет бегунка и фона полосы прокрутки */
-  scrollbar-width: thin; /* делает полосу тоньше */
-}
-
-a {
-  color: black;
-  text-decoration: none;
-  margin-left: 10px;
-  margin-right: 10px;
-  transform: translateY(0);
-  transition: all 0.3s;
-}
-
-a:hover {
-  text-decoration: underline;
-  color: cadetblue;
+  scrollbar-color: #F0F0FF #F0F0FF;
+  scrollbar-width: thin;
 }
 
 body {
@@ -44,23 +53,37 @@ body {
   padding: 0;
 }
 
+a {
+  color: black;
+  text-decoration: none;
+  margin: 0 10px;
+  transform: translateY(0);
+  transition: all 0.3s;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: cadetblue;
+}
+
 header {
   user-select: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 50px 10px 10px;
+  animation: fadeDown2 1s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .hero {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-height: 100vh; /* на всю высоту viewport */
+  min-height: 100vh;
   padding-left: 15%;
   gap: 0;
-  flex-wrap: wrap; /* Добавление переноса строк для мобильных устройств */
-  box-sizing: border-box; /* Учет размера элемента с учетом padding и border */
+  flex-wrap: wrap;
+  box-sizing: border-box;
   padding-bottom: 150px;
   padding-right: 10%;
 }
@@ -81,13 +104,13 @@ header {
 }
 
 #hello {
-  font-size: clamp(40px, 7vw, 64px); 
+  font-size: clamp(40px, 7vw, 64px);
   user-select: none;
   margin-left: 20px;
 }
 
 #helloP {
-  font-size: clamp(32px, 5vw, 32px); 
+  font-size: clamp(32px, 5vw, 32px);
   user-select: none;
   margin-left: 20px;
   margin-top: 10px;
@@ -97,13 +120,13 @@ header {
 .base-avatar {
   animation: rotateImage 1s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
+
 .avatar {
   position: relative;
-  width: 300px; 
+  width: 300px;
   height: 300px;
   margin-left: 20%;
-  aspect-ratio: 1; 
-
+  aspect-ratio: 1;
 }
 
 .avatar img,
@@ -116,7 +139,7 @@ header {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; 
+  object-fit: cover;
 }
 
 .avatar .overlay-avatar {
@@ -140,15 +163,24 @@ header {
 .tags {
   display: flex;
   flex-direction: column;
-  gap: 10px; 
+  gap: 10px;
   margin-top: 20px;
   margin-left: 10px;
+  user-select: none;
+}
+
+#buy {
+  width: 25%;
+  height: 40px;
+  margin-left: 20%;
+  background-color: #F0F0FF;
+  border: 1px solid #000000;
 }
 
 .tagsup, .tagsdown {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px; 
+  gap: 15px;
 }
 
 .tagsdown {
@@ -157,17 +189,17 @@ header {
 }
 
 .tag {
-  width: 180px; 
-  height: 50px; 
+  width: 180px;
+  height: 50px;
   display: flex;
-  justify-content: center; 
-  align-items: center; 
+  justify-content: center;
+  align-items: center;
 }
 
 .tags img {
-  width: 220px; 
-  height: 50px; 
-  object-fit: contain; 
+  width: 220px;
+  height: 50px;
+  object-fit: contain;
 }
 
 .avatar-with-icons {
@@ -178,13 +210,13 @@ header {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 320px;  
+  width: 320px;
   height: 320px;
   transform: translate(-50%, -50%);
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 50%; 
+  border-radius: 50%;
   flex-wrap: wrap;
 }
 
@@ -193,9 +225,8 @@ header {
   height: auto;
   position: absolute;
   opacity: 0;
-  animation: fly 1s forwards; 
+  animation: fly 1s forwards cubic-bezier(0.075, 0.82, 0.165, 1);
 }
-
 
 @keyframes fly {
   0% {
@@ -207,7 +238,6 @@ header {
     opacity: 1;
   }
 }
-
 
 .fly-icon:nth-child(1) {
   --x: 150px;
@@ -244,31 +274,149 @@ header {
   --y: -190px;
 }
 
+.page_one {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
 
+.pagedown {
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+  user-select: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.pagedown:hover {
+  transform: scale(1.1);
+}
+
+#page1info {
+  animation: fadeDown2 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+#down-arrow1 {
+  animation: fadeDown 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Для мобильных устройств */
 @media (max-width: 768px) {
+  body {
+    overflow: auto; /* Разрешаем прокрутку */
+  }
+
   header {
-    flex-direction: column;
-    align-items: flex-start;
     padding: 10px;
+    flex-direction: row; /* Оставляем горизонтальное расположение */
+    justify-content: space-between;
+    align-items: center;
+    animation: none; /* Убираем анимации */
   }
 
   .hero {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: column-reverse; /* Сначала показываем аватар */
+    padding: 10px;
+    min-height: auto;
+    gap: 20px;
+  }
+
+  .left-content, .right-content {
+    width: 100%;
+    flex: none;
   }
 
   .right-content {
     margin-right: 0;
-    margin-top: 20px;
+    justify-content: center;
+  }
+
+  #hello {
+    font-size: 28px; /* Увеличиваем для удобства чтения */
+    margin: 0;
+    text-align: center;
+  }
+
+  #helloP {
+    font-size: 16px;
+    width: 100%;
+    margin: 10px 0 0 0;
+    text-align: center;
   }
 
   .avatar {
-    margin-left: 0;
     width: 100%;
-    max-width: 320px; 
+    max-width: 250px; /* Меньше, чтобы не занимать много места */
+    margin: 0 auto;
+    height: auto;
+    aspect-ratio: unset;
   }
 
-  #hello, #helloP, .tags {
-    margin-left: 0;
+  .base-avatar, .fly-icon {
+    animation: none; /* Убираем анимации */
+  }
+
+  .fly-icons {
+    display: none; /* Скрываем иконки */
+  }
+
+  .logo {
+    font-size: 22px;
+  }
+
+  .tags {
+    margin: 10px 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .tagsup, .tagsdown {
+    width: 100%;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .tag {
+    width: 48%; /* Две колонки с небольшим отступом */
+    height: auto;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+
+  .tags img {
+    width: 100%;
+    height: auto;
+    max-height: 40px; /* Ограничиваем высоту для консистентности */
+  }
+
+  #buy {
+    width: 100%;
+    margin: 20px auto;
+    height: 50px;
+    border-radius: 25px; /* Более дружелюбный к тачу */
+    font-size: 16px;
+    display: block; /* Убираем inline-block поведение */
+  }
+
+  .page_one {
+    position: static;
+    height: auto;
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  .pagedown {
+    margin: 0;
   }
 }
+
+/* Основные стили остаются такими же, как в предыдущем ответе */
