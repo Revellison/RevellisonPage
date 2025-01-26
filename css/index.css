@@ -73,6 +73,7 @@ header {
   align-items: center;
   padding: 10px 50px 10px 10px;
   animation: fadeDown2 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  font-family: "Rubik", sans-serif;
 }
 
 .hero {
@@ -86,6 +87,7 @@ header {
   box-sizing: border-box;
   padding-bottom: 150px;
   padding-right: 10%;
+  font-family: "Rubik", sans-serif;
 }
 
 .left-content,
@@ -309,9 +311,6 @@ header {
 
 /* Для мобильных устройств */
 @media (max-width: 768px) {
-  body {
-    overflow: auto; /* Разрешаем прокрутку */
-  }
 
   header {
     padding: 10px;
@@ -328,43 +327,37 @@ header {
     gap: 20px;
   }
 
-  .left-content, .right-content {
-    width: 100%;
-    flex: none;
+  .avatar-with-icons{
+    transform: scale(0.8); /* Уменьшаем элементы в 2 раза */
   }
 
   .right-content {
-    margin-right: 0;
-    justify-content: center;
+    height: 150px;
+    width: 150px;
   }
 
   #hello {
-    font-size: 28px; /* Увеличиваем для удобства чтения */
+    font-size: 38px; /* Увеличиваем для удобства чтения */
     margin: 0;
-    text-align: center;
+    margin-left: 5%;
+    text-align: left;
   }
 
   #helloP {
-    font-size: 16px;
-    width: 100%;
+    font-size: 28px;
+    width: 60%;
     margin: 10px 0 0 0;
-    text-align: center;
+    text-align: left;
+    margin-left: 5%;
   }
+
 
   .avatar {
-    width: 100%;
-    max-width: 250px; /* Меньше, чтобы не занимать много места */
-    margin: 0 auto;
-    height: auto;
-    aspect-ratio: unset;
-  }
-
-  .base-avatar, .fly-icon {
-    animation: none; /* Убираем анимации */
+    transform: scale(0.4); /* Уменьшаем элементы в 2 раза */
   }
 
   .fly-icons {
-    display: none; /* Скрываем иконки */
+    transform: scale(0.4); /* Уменьшаем элементы в 2 раза */
   }
 
   .logo {
@@ -372,30 +365,30 @@ header {
   }
 
   .tags {
-    margin: 10px 0;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
+    justify-content: left;
+    gap: 5px;
   }
 
   .tagsup, .tagsdown {
     width: 100%;
-    justify-content: center;
+    justify-content: left;
     gap: 10px;
   }
 
   .tag {
-    width: 48%; /* Две колонки с небольшим отступом */
     height: auto;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     font-size: 14px;
+    
   }
 
   .tags img {
-    width: 100%;
+
     height: auto;
-    max-height: 40px; /* Ограничиваем высоту для консистентности */
+    max-height: 38px; /* Ограничиваем высоту для консистентности */
+    width: 160px;
   }
 
   #buy {
@@ -416,7 +409,42 @@ header {
 
   .pagedown {
     margin: 0;
+    display: none;
   }
 }
 
-/* Основные стили остаются такими же, как в предыдущем ответе */
+@media (max-width: 523px) {
+
+  header {
+    padding: 10px;
+    flex-direction: column; /* Оставляем горизонтальное расположение */
+    justify-content: space-between;
+    align-items: center;
+    animation: none; /* Убираем анимации */
+    font-size: 18px;
+    justify-content: center;
+  }
+  .navigation {
+    margin: 28px 0;
+    text-align: center;
+    background-color: black;
+    padding: 5px;
+    border-radius: 35px;
+
+  }
+  .navbtn {
+    color: #F0F0FF;
+  }
+
+  .logo {
+    font-size: 35px;
+  }
+
+}
+
+@media (max-width: 401px) {
+
+  header {
+    font-size: 13px;
+  }
+}
