@@ -1,3 +1,45 @@
+
+.back {
+  background-color: #000000;
+  border-radius: 25px;
+  border: 2px solid #000000;
+  padding: 10px 15px;
+  width: 200px;
+  color: #ffffff;
+  font-size: 16px;  
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+  font-family: "Rubik", sans-serif;
+}
+
+.back:hover {
+  background-color: #F0F0FF;
+  color: black;
+  transform: translateY(-5px);
+  border: 2px solid #000000;
+}
+
+.back_btn{
+justify-content: center;
+align-items: center;
+margin-left: 10px;
+user-select: none;
+cursor: pointer;
+}
+
+.back_index  {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+
 .preloader {
   position: fixed;
   left: 0;
@@ -118,6 +160,7 @@
 html {
   scrollbar-color: #F0F0FF #F0F0FF;
   scrollbar-width: thin;
+  scroll-behavior: smooth;
 
 }
 
@@ -168,20 +211,68 @@ header:hover .logo {
 }
 
 .buy {
-  padding: 10px 15px 10px 15px;
+  padding: 10px 15px;
   border-radius: 17px;
   color: white;
   border: 1px solid black;
   font-size: 16px;
   background-color: #000000;
   font-family: "Rubik", sans-serif;
-  transition: background-color 0.3s, color 0.3s;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.buy::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, 
+    transparent 25%,
+    rgba(255,255,255,0.1) 50%,
+    transparent 75%);
+  transform: rotate(0deg);
+  animation: rotate 3s linear infinite;
+  z-index: -1;
+}
+
+.buy::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  border-radius: 15px;
+  background: #000;
+  z-index: -1;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.2);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
 }
 
 .buy:hover {
   background-color: #F0F0FF;
-  color: black;
+  color: white;
   cursor: pointer;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.buy:hover::before {
+  background: linear-gradient(45deg, 
+    transparent 25%,
+    rgba(0,0,0,0.1) 50%,
+    transparent 75%);
 }
 .hero {
   display: flex;
@@ -426,6 +517,21 @@ header:hover .logo {
 }
 
 
+#content1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+  padding-left: 15%;
+  gap: 0;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  padding-bottom: 150px;
+  padding-right: 10%;
+  font-family: "Rubik", sans-serif;
+}
+
+
 @media (max-width: 1670px) {
   .hero {
     padding-left: 13%;
@@ -586,6 +692,8 @@ header:hover .logo {
     display: none;
   }
 }
+
+
 
 @media (max-width: 523px) {
 

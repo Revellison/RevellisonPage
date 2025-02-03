@@ -1,10 +1,25 @@
 <!DOCTYPE html>
 <html lang="ru" dir="ltr">
   <head>
-    
+    <link rel="apple-touch-icon" sizes="57x57" href="media/images/web_icon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="media/images/web_icon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="media/images/web_icon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="media/images/web_icon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="media/images/web_icon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="media/images/web_icon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="media/images/web_icon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="media/images/web_icon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="media/images/web_icon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="media/images/web_icon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="media/images/web_icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="media/images/web_icon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="media/images/web_icon/favicon-16x16.png">
+    <link rel="manifest" href="media/images/web_icon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="media/images/web_icon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
     <meta charset="utf-8">
     <title>Revellison</title>
-
   </head>
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,20 +33,12 @@
         <div class="preloader__item"></div>
       </div>
     </div>-->
-    <header>
-            <div class="logo">REVELLISON</div>
-            <nav class="navigation">
-                <button class="buy">Оформить заказ</button>
-                <a href="#portfolio" class="navbtn" >Портфолио</a>
-                <a href="#solutions" class="navbtn" >Готовые решения</a>
-                <a href="#contact" class="navbtn" >Связь</a>
-            </nav>
-        </header>
+        <div id="header-placeholder"></div>
 
         <section class="hero">
           <div class="left-content">
             <h1 id="hello">Привет!</h1>
-            <p id="helloP">Я создаю современные <span style="color: rgb(63, 76, 255);">сайты</span>, эффективные <span style="color: rgb(63, 76, 255);">скрипты</span> и занимаюсь <span style="color: rgb(63, 76, 255);">видеомонтажом</span>.</p>
+            <p id="helloP">Я создаю современные <span style="color: rgb(63, 76, 255);">сайты</span>, красивую <span style="color: rgb(63, 76, 255);">инфографику</span> и занимаюсь <span style="color: rgb(63, 76, 255);">видеомонтажом</span>.</p>
             <div class="tags">
               <div class="tagsup">
                 <div class="tag">
@@ -70,25 +77,51 @@
           </div>
         <div class="page_one">
           <div class="pagedown">
-            <p id="page1info">подробнее</p>
-              <img id="down-arrow1" src="media/icons/page_1/down-arrow.svg" alt="">
+            <a href="#content1" id="down-arrow1">
+                <img src="media/icons/page_1/down-arrow.svg" alt="Подробнее">
+            </a>
           </div>
         </div>
         </section>
         
-<!-- Конец шапки сайта 
-        <section class="section" id="portfolio">
+ 
+        <section class="section" id="content1">
             <h2>Веб-разработка</h2>
             <p>Разработка интуитивно понятных, стильных и функциональных веб-сайтов, которые отражают ваш бренд и привлекают клиентов.</p>
-            <div class="skills">
-                <div class="skill">HTML5</div>
-                <div class="skill">CSS</div>
-                <div class="skill">JavaScript</div>
-                <div class="skill">Python</div>
+            <div class="tags_cn1">
+              <div class="tagsup_cn1">
+                <div class="tag_cn1">
+                  <img id="tag1_cn1" src="media/images/content1/js.svg" alt="Js">
+                </div>
+                <div class="tag_cn1">
+                  <img id="tag2_cn1" src="media/images/content1/css.svg" alt="css">
+                </div>
+              </div>
+              <div class="tagsdown">
+                <div class="tag_cn1">
+                  <img id="tag3_cn1" src="media/images/content1/html.svg" alt="html">
+                </div>
+                <div class="tag_cn1">
+                  <img id="tag4_cn1" src="media/images/content1/python.svg" alt="python">
+                </div>
+              </div>
             </div>
-        </section>
+          </div>
+          <div class="right-content">
+            <div class="clgs">
 
-        <section class="section" id="solutions">
+              </div>
+            </div>
+          </div>
+        <div class="page_two">
+          <div class="pagedown">
+            <a href="#content2" id="down-arrow1">
+                <img src="media/icons/page_1/down-arrow.svg" alt="Подробнее">
+            </a>
+          </div>
+        </div>
+        </section>
+        <!-- Конец шапки сайта <section class="section" id="content2">
             <h2>Видеомонтаж</h2>
             <p>Профессиональный монтаж видео, создание динамичных и запоминающихся роликов.</p>
             <div class="skills">
@@ -104,5 +137,6 @@
         </footer>
         -->
         <script src="js/preloader.js"></script>
+        <script src="js/loadHeader.js"></script>
   </body>
 </html>
