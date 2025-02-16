@@ -30,11 +30,90 @@
 <body>
     <div id="header-placeholder"></div>
 
+    <div class="portfolio-container">
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">Все работы</button>
+            <button class="filter-btn" data-filter="infographic">Инфографика</button>
+            <button class="filter-btn" data-filter="web">Веб-проекты</button>
+            <button class="filter-btn" data-filter="video">Видеомонтаж</button>
+        </div>
+
+        <div class="portfolio-grid">
+            <div class="portfolio-item infographic">
+                <img src="media/portfolio/infograph/Mouse1.svg" alt="Инфографика 1">
+                <div class="item-overlay">
+                    <h3>Карточка "Игровая мышь"</h3>
+                    <p>Инфографика для озона/вб</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item infographic">
+                <img src="media/portfolio/infograph/dyson.png" alt="Инфографика 2">
+                <div class="item-overlay">
+                    <h3>Карточка "Фен для волос"</h3>
+                    <p>Инфографика для озона/вб</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item infographic">
+                <img src="media/portfolio/infograph/notebook1.png" alt="Инфографика 3">
+                <div class="item-overlay">
+                    <h3>Карточка "Ноутбук"</h3>
+                    <p>Инфографика для озона/вб</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item infographic">
+                <img src="media/portfolio/infograph/GPU.png" alt="Инфографика 4">
+                <div class="item-overlay">
+                    <h3>Карточка "Видеокарта"</h3>
+                    <p>Инфографика для озона/вб</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item infographic">
+                <img src="media/portfolio/infograph/flash.png" alt="Инфографика 5">
+                <div class="item-overlay">
+                    <h3>Карточка "Флэшкарта"</h3>
+                    <p>Инфографика для озона/вб</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item web">
+                <img src="https://avatars.mds.yandex.net/i?id=3183252d8b886c0004204afe62624180e2d87bf8-6490940-images-thumbs&n=13" alt="Веб-проект 1">
+                <div class="item-overlay">
+                    <h3>AboutMe Вебсайт</h3>
+                    <p>Вы сейчас на этой страничке</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item video">
+                <img src="https://avatars.mds.yandex.net/i?id=3183252d8b886c0004204afe62624180e2d87bf8-6490940-images-thumbs&n=13" alt="Видео 1">
+                <div class="item-overlay">
+                    <h3>Название видео</h3>
+                    <p>Описание видео</p>
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+
     <div class="back_index">
         <div class="back_btn">
-            <form action="index.html" target="blank">
+            <!-- <form action="index.html">
                 <button class="back">Назад</button>
-          </a>
+            </form> -->
+        </div>
+    </div>
+
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImg">
+    </div>
+    <div id="footer-placeholder"></div>
+    <script src="js/loadFooter.js"></script>
     <script src="js/loadHeader.js"></script>
+    <script src="js/portfolio.js"></script>
 </body>
 </html>
