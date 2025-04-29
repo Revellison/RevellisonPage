@@ -1,229 +1,27 @@
-<!DOCTYPE html>
-<html lang="ru" dir="ltr">
+<!doctype html>
+<html lang="ru">
   <head>
-    <link rel="apple-touch-icon" sizes="57x57" href="media/images/web_icon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="media/images/web_icon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="media/images/web_icon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="media/images/web_icon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="media/images/web_icon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="media/images/web_icon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="media/images/web_icon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="media/images/web_icon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="media/images/web_icon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="media/images/web_icon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="media/images/web_icon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="media/images/web_icon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="media/images/web_icon/favicon-16x16.png">
-    <link rel="manifest" href="media/images/web_icon/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="media/images/web_icon/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-    <meta charset="utf-8">
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Revellison - создание современных сайтов, инфографики и видеомонтаж" />
     <title>Revellison</title>
+    <!-- Скрипт для обработки путей в GitHub Pages -->
+    <script type="text/javascript">
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location))
+    </script>
   </head>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/index.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
   <body>
-    <!-- <div class="preloader">
-      <div class="preloader__row">
-        <div class="preloader__item"></div>
-        <div class="preloader__item"></div>
-      </div>
-    </div>-->
-        <div id="header-placeholder"></div>
-
-        <section class="hero">
-          <div class="left-content">
-            <h1 id="hello">Привет!</h1>
-            <p id="helloP">Я создаю современные <span style="color: rgb(63, 76, 255);">сайты</span>, красивую <span style="color: rgb(63, 76, 255);">инфографику</span> и занимаюсь <span style="color: rgb(63, 76, 255);">видеомонтажом</span>.</p>
-            <div class="tags">
-              <div class="tagsup">
-                <div class="tag">
-                  <img id="tag1" src="media/icons/page_1/tag1.svg" alt="Быстро">
-                </div>
-                <div class="tag">
-                  <img id="tag2" src="media/icons/page_1/tag2.svg" alt="Дешево">
-                </div>
-              </div>
-              <div class="tagsdown">
-                <div class="tag">
-                  <img id="tag3" src="media/icons/page_1/tag3.svg" alt="Надёжно">
-                </div>
-                <div class="tag">
-                  <img id="tag4" src="media/icons/page_1/tag4.svg" alt="Креативно">
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="right-content">
-            <div class="avatar-with-icons">
-              <div class="fly-icons">
-                <img src="media/icons/page_1/fly_css.svg" alt="" class="fly-icon">
-                <img src="media/icons/page_1/html.svg" alt="" class="fly-icon">
-                <img src="media/icons/page_1/fly_rocket.svg" id="rocket" class="fly-icon">
-                <img src="media/icons/page_1/fly_js.svg" alt="" class="fly-icon">
-                <img src="media/icons/page_1/fly-console.svg" alt="" class="fly-icon">
-                <img src="media/icons/page_1/fly-verify.svg" alt="" class="fly-icon">
-                <img src="media/icons/page_1/fly_html.svg" alt="" class="fly-icon">
-              </div>
-              <div class="avatar">
-                <img src="media/images/avatar.svg" alt="Revellison" class="base-avatar">
-                <img src="media/images/avatar_restangle.svg" class="overlay-avatar">
-              </div>
-            </div>
-          </div>
-        <div class="page_one">
-          <div class="pagedown">
-            <a href="#content1" id="down-arrow1">
-                <img src="media/icons/page_1/down-arrow.svg" alt="Подробнее">
-            </a>
-          </div>
-        </div>
-        </section>
-        
- 
-        <section class="section" id="content1" style="position: relative;">
-            <h2>Веб-разработка</h2>
-            <p>Разработка интуитивно понятных, стильных и функциональных веб-сайтов, которые отражают ваш бренд и привлекают клиентов.</p>
-            <div class="tags_cn1">
-              <div class="tagsup_cn1">
-                <div class="tag_cn1">
-                  <img id="tag1_cn1" src="media/images/content1/js.svg" alt="Js">
-                </div>
-                <div class="tag_cn1">
-                  <img id="tag2_cn1" src="media/images/content1/css.svg" alt="css">
-                </div>
-              </div>
-              <div class="tagsdown">
-                <div class="tag_cn1">
-                  <img id="tag3_cn1" src="media/images/content1/html.svg" alt="html">
-                </div>
-                <div class="tag_cn1">
-                  <img id="tag4_cn1" src="media/images/content1/python.svg" alt="python">
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="right-content">
-            <div class="clgs_up">
-              <div class="clg">
-                <img src="media/images/content1/css.png" alt="css">
-              </div>
-              <div class="clg">
-                <img src="media/images/content1/html.png" alt="html">
-              </div>
-            </div>
-            <div class="clgs_down">
-              <div class="clg">
-                <img src="media/images/content1/js.png" alt="JavaScript">
-              </div>
-              <div class="clg">
-                <img src="media/images/content1/python.png" alt="Python">
-              </div>
-            </div>
-          </div>
-        <div class="page_two">
-          <div class="pagedown">
-            <a href="#content2" id="down-arrow1">
-                <img src="media/icons/page_1/down-arrow.svg" alt="Далее">
-            </a>
-          </div>
-        </div>
-        </section>
-
-        <section class="section" id="content2">
-          <h2>Видеомонтаж</h2>
-          <p>Профессиональный монтаж видео, создание динамичных и запоминающихся роликов, которые захватывают внимание и передают ваше сообщение.</p>
-          <div class="tags_cn1">
-            <div class="tagsup_cn1">
-              <div class="tag_cn1">
-                <img id="tag1_cn1" src="media/images/content2/vegas_pro.svg" alt="Sony Vegas Pro">
-              </div>
-              <div class="tag_cn1">
-                <img id="tag2_cn1" src="media/images/content2/after_effects.svg" alt="Adobe After Effects">
-              </div>
-            </div>
-            <div class="tagsdown">
-              <div class="tag_cn1">
-                <img id="tag3_cn1" src="media/images/content2/premiere_pro.svg" alt="Adobe Premiere Pro">
-              </div>
-              <div class="tag_cn1">
-                <img id="tag4_cn1" src="media/images/content2/capcut.svg" alt="CapCut">
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="right-content">
-          <div class="clgs_up">
-            <div class="clg">
-              <img src="media/images/content2/premiere_big.png" alt="Adobe Premiere Pro">
-            </div>
-            <div class="clg">
-              <img src="media/images/content2/ae_big.png" alt="Adobe After Effects">
-            </div>
-          </div>
-          <div class="clgs_down">
-            <div class="clg">
-              <img src="media/images/content2/vegas_big.png" alt="Sony Vegas Pro">
-            </div>
-            <div class="clg">
-              <img src="media/images/content2/capcut_big.png" alt="CapCut">
-            </div>
-          </div>
-        </div>
-        </div>
-      <div class="page_three">
-        <div class="pagedown">
-          <a href="#content2" id="down-arrow1">
-              <img src="media/icons/page_1/down-arrow.svg" alt="Далее">
-          </a>
-        </div>
-      </div>
-      </section>
-
-      <!-- <section class="section" id="content3">
-        <h2>Инфографика</h2>
-        <p>Создание информативной и привлекательной инфографики, визуализация сложных данных в понятной форме, разработка уникального дизайна для эффективной передачи информации.</p>
-        <div class="tags_cn1">
-          <div class="tagsup_cn1">
-            <div class="tag_cn1">
-              <img id="tag1_cn1" src="media/images/content2/vegas_pro.svg" alt="Sony Vegas Pro">
-            </div>
-            <div class="tag_cn1">
-              <img id="tag2_cn1" src="media/images/content2/after_effects.svg" alt="Adobe After Effects">
-            </div>
-          </div>
-          <div class="tagsdown">
-            <div class="tag_cn1">
-              <img id="tag3_cn1" src="media/images/content2/premiere_pro.svg" alt="Adobe Premiere Pro">
-            </div>
-            <div class="tag_cn1">
-              <img id="tag4_cn1" src="media/images/content2/capcut.svg" alt="CapCut">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="right-content">
-        <div class="clgs">
-
-          </div>
-        </div>
-      </div>
-    <div class="page_two">
-      <div class="pagedown">
-        <a href="#content2" id="down-arrow1">
-            <img src="media/icons/page_1/down-arrow.svg" alt="Подробнее">
-        </a>
-      </div>
-    </div>
-    </section> -->
-      <div id="footer-placeholder"></div>
-        <script src="js/loadFooter.js"></script>
-        <script src="js/preloader.js"></script>
-        <script src="js/loadHeader.js"></script>
-
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
