@@ -1,19 +1,35 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import TechCarousel from '../components/TechCarousel';
+import '../pages/css/index.css';
 function Index() {
   return (
-    <div className="container mx-auto px-4 py-8">
-      <TechCarousel />
-      <h1 className="text-4xl font-bold mb-6">Добро пожаловать на Revellison</h1>
-      <h2 className="text-2xl font-semibold mb-4">Создание современных сайтов и цифровых решений</h2>
-      
-      <div className="mt-8">
-        <Link to="/shop" className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">
-          Узнать больше
-        </Link>
+    <div className="main-container">
+      <div className="content-wrapper">
+        <div className="text-section">
+          <h1 className="main-title">Разработка <span style={{color: 'black', backgroundColor: 'white', borderRadius: '10px', padding: '5px', paddingLeft: '10px', paddingRight: '10px'}}>IT-продуктов</span></h1>
+          <h2 className="subtitle">веб-сайты, приложения и цифровые решения под ключ.</h2>
+          <div className="buttons-container">
+            <Link to="/shop" className="primary-button">
+              Выбрать продукт
+            </Link>
+            <div className="arrow-container">
+              <svg style={{height: '36px', width: '36px'}} xmlns="http://www.w3.org/2000/svg" className="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M5 12h14"></path>
+                <path d="M12 5l7 7-7 7"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div className="image-section">
+            <div className="image-container">
+              <img src="/src/assets/mockup.png" alt="Изображение" className="main-image" />
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+
   );
 }
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './css/shop.css';
 
 function Shop() {
   const products = [
@@ -30,24 +31,24 @@ function Shop() {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold mb-6">Наши услуги</h1>
+    <div className="shop-container">
+      <h1 className="shop-title">Наши услуги</h1>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="products-grid">
         {products.map(product => (
-          <div key={product.id} className="border rounded-lg p-4 shadow-md">
-            <h2 className="text-xl font-semibold">{product.name}</h2>
-            <p className="text-gray-600 my-2">{product.description}</p>
-            <p className="text-2xl font-bold text-blue-600">{product.price} ₽</p>
-            <button className="mt-4 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">
+          <div key={product.id} className="product-card">
+            <h2 className="product-name">{product.name}</h2>
+            <p className="product-description">{product.description}</p>
+            <p className="product-price">{product.price} ₽</p>
+            <button className="order-button">
               Заказать
             </button>
           </div>
         ))}
       </div>
       
-      <div className="mt-8">
-        <Link to="/" className="text-blue-500 hover:text-blue-700">
+      <div className="back-link-container">
+        <Link to="/" className="back-link">
           Вернуться на главную
         </Link>
       </div>

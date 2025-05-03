@@ -1,0 +1,77 @@
+import React, { useState } from 'react';
+import '../components/css/ProductCard.css';
+
+const ProductCard = ({ title, price, image, description, category }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
+  return (
+    <>
+      <div className="product-card">
+        <img src={image} alt={title} className="product-image" />
+        <div className="product-content">
+          <h3 className="product-title">{title}</h3>
+          <span className="product-category">{category}</span>
+          <p className="product-description">{description}</p>
+          <div className="product-footer">
+            <span className="product-price">{price} ₽</span>
+            <button 
+              onClick={openModal}
+              className="details-button"
+            >
+              Подробнее
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {isModalOpen && (
+        <div className="modal-overlay">
+          <div className="modal-container">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h2 className="modal-title">{title}</h2>
+                <button 
+                  onClick={closeModal}
+                  className="close-button"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="close-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+              
+              <img src={image} alt={title} className="modal-image" />
+              
+              <div className="modal-info">
+                <span className="modal-category">{category}</span>
+                <span className="modal-price">{price} ₽</span>
+              </div>
+              
+              <div className="modal-description-container">
+                <h3 className="description-title">Описание:</h3>
+                <p className="modal-description">{description}</p>
+              </div>
+              
+              <div className="modal-actions">
+                <button className="cart-button">
+                  В корзину
+                </button>
+                <button 
+                  onClick={closeModal}
+                  className="cancel-button"
+                >
+                  Закрыть
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
+  );
+};
+
+export default ProductCard;
