@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import TechCarousel from '../components/TechCarousel';
 import '../pages/css/index.css';
+import mockupImage from '../assets/mockup.png';
+
 function Index() {
   return (
     <div className="main-container">
@@ -24,7 +26,7 @@ function Index() {
 
         <div className="image-section">
             <div className="image-container">
-              <img src="/src/assets/mockup.png" alt="Изображение" className="main-image" />
+              <img src={mockupImage} alt="Изображение" className="main-image" />
             </div>
           </div>
         </div>
