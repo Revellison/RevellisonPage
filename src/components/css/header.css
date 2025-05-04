@@ -92,7 +92,69 @@
   height: 24px;
 }
 
-/* Адаптивность для мобильных устройств */
+.header-button-contacts {
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 25px;
+  padding: 15px 40px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.header-button-buy {
+  background-color: #ffffff;
+  border: 2px solid #ffffff;
+  color: #000000;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 25px;
+  padding: 15px 40px;
+  cursor: pointer;
+}
+
+.header-button-contacts:hover {
+  background-color: #ffffff;
+  color: #000000;
+  
+}
+
+.header-button-buy:hover {
+  background-color: transparent;
+  color: #ffffff;
+}
+
+img.logo {
+  max-width: 40px;
+  height: auto;
+  margin-right: 8px;
+}
+
+@media (max-width: 1024px) {
+  .header-button-contacts {
+    display: none;
+  }
+  
+  .header-button-buy {
+    padding: 12px 30px;
+    font-size: 15px;
+    margin-left: 0;
+  }
+  
+  img.logo {
+    max-width: 30px;
+    height: auto;
+  }
+}
+
 @media (max-width: 768px) {
   .main-nav {
     display: none;
@@ -106,7 +168,61 @@
     padding: 0.8rem 1rem;
   }
   
+  .logo a {
+    display: none;
+  }
+  
+  img.logo {
+    max-width: 25px;
+    height: auto;
+  }
+
+  .header-button-contacts {
+    display: none;
+  }
+  
+  .header-button-buy {
+    padding: 12px 30px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-container {
+    padding: 0.6rem 0.8rem;
+  }
+  
   .logo {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
+  }
+  
+  img.logo {
+    max-width: 20px;
+    height: auto;
+  }
+  
+  .header-button-buy {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 320px) {
+  .header-container {
+    padding: 0.5rem 0.6rem;
+  }
+  
+  .logo {
+    font-size: 0.9rem;
+  }
+  
+  img.logo {
+    max-width: 18px;
+    height: auto;
+  }
+  
+  .header-button-buy {
+    padding: 8px 15px;
+    font-size: 11px;
   }
 }

@@ -20,8 +20,8 @@ const Header = () => {
         </nav>
 
         <div className="header-buttons">
-          <button className="header-button">Контакты</button>
-          <button className="header-button">Купить</button>
+          <button className="header-button-contacts">Контакты</button>
+          <button onClick={() => window.location.href='/shop'} className="header-button-buy">Заказать</button>
         </div>
         
         <div className="mobile-menu">
