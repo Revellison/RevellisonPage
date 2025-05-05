@@ -164,9 +164,10 @@ img.logo {
     display: block;
   }
   
-  .header-container {
+  .header-container{
     padding: 0.8rem 1rem;
   }
+
   
   .logo a {
     display: none;
@@ -182,8 +183,7 @@ img.logo {
   }
   
   .header-button-buy {
-    padding: 12px 30px;
-    font-size: 15px;
+    display: none;
   }
 }
 
