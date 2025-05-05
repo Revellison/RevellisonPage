@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../components/css/header.css';
 import logoHeader from '../assets/logo_header.png';
-
+import Checkbox from './burger';
 const Header = () => {
   return (
     <header className="header">
@@ -21,16 +21,12 @@ const Header = () => {
         </nav>
 
         <div className="header-buttons">
-          <button className="header-button-contacts">Контакты</button>
-          <button onClick={() => window.location.href='/shop'} className="header-button-buy">Заказать</button>
+          <Link to="/contacts" className="header-button-contacts">Контакты</Link>
+          <Link to="/shop" className="header-button-buy">Заказать</Link>
         </div>
         
         <div className="mobile-menu">
-          <button className="menu-button">
-            <svg className="menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-            </svg>
-          </button>
+          <Checkbox />
         </div>
       </div>
     </header>

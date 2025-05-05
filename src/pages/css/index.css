@@ -1,3 +1,7 @@
+body {
+    user-select: none;
+}
+
 .text-section {
     font-size: 24px;
 }
@@ -49,19 +53,19 @@
     font-size: 19px;
     font-weight: 600;
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: all 0.45s cubic-bezier(0.25, 0.1, 0.25, 1);
     cursor: pointer;
-    border: 5px dashed transparent;
+    border: 3px dashed transparent;
  }
 
 .primary-button:hover {
-    background-color: #000000;
+    background-color: #ffffff63;
     color: #ffffff;
-    border: 5px dashed #ffffff;
+    border: 3px dashed #ffffff;
 }
 
 .arrow-container svg {
-    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: all 0.45s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .buttons-container:hover .arrow-container svg {
@@ -71,6 +75,8 @@
 @media (max-width: 1200px) {
     .content-wrapper {
         gap: 6rem;
+        margin-left: 5%;
+        margin-right: 5%;
     }
     
     .text-section {
@@ -106,8 +112,11 @@
     }
     
     .image-container img {
-        max-width: 85%;
-        height: auto;
+        display: none;
+    }
+
+    .arrow-container {
+        display: none;
     }
 }
 
@@ -126,20 +135,17 @@
         max-width: 90%;
         text-align: center;
         margin: 0 auto;
+        margin-top: 20px;
     }
     
     .buttons-container {
+        margin-top: 20px;
         justify-content: center;
     }
     
-    .primary-button {
-        font-size: 16px;
-        padding: 8px 16px;
-    }
-    
+
     .image-container img {
-        max-width: 80%;
-        height: auto;
+        display: none;
     }
 }
 
@@ -156,19 +162,14 @@
         max-width: 100%;
     }
     
-    .primary-button {
-        font-size: 14px;
-        padding: 7px 14px;
-        border-width: 3px;
-    }
+
     
     .arrow-container {
         min-width: 40px;
     }
     
     .image-container img {
-        max-width: 95%;
-        height: auto;
+        display: none;
     }
 }
 
@@ -182,18 +183,12 @@
         gap: 15px;
     }
     
-    .primary-button {
-        font-size: 12px;
-        padding: 6px 12px;
-        border-width: 2px;
-    }
     
     .arrow-container {
         min-width: 30px;
     }
     
     .image-container img {
-        max-width: 100%;
-        height: auto;
+        display: none;
     }
 }
