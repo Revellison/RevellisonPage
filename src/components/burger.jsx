@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import '../components/css/burger.css';
 import { Link } from 'react-router-dom';
 
-
-
 const Checkbox = () => {
   const [isOpen, setIsOpen] = useState(false);
   
@@ -14,40 +12,32 @@ const Checkbox = () => {
   useEffect(() => {
     const body = document.body;
     
-    // Создаем или находим main-container при первой загрузке компонента
     let mainContainer = document.querySelector('.main-container');
     
     if (!mainContainer) {
-      // Если контейнер не существует, создаем его
       const root = document.getElementById('root') || document.body;
       
-      // Создаем контейнер для меню и кнопки
       const menuContainer = document.createElement('div');
       menuContainer.className = 'menu-controls';
       
-      // Перемещаем все дочерние элементы (кроме бургера и меню) в main-container
       mainContainer = document.createElement('div');
       mainContainer.className = 'main-container';
       
-      // Получаем все дочерние элементы root
       const allChildren = Array.from(root.children);
-      
-      // Перемещаем элементы в соответствующие контейнеры
+  
       allChildren.forEach(child => {
         if (child.classList.contains('side-menu') || 
             child.classList.contains('overlay') || 
             child === document.querySelector('.hamburger')?.parentNode) {
-          // Оставляем меню и бургер на своих местах
+
         } else {
-          // Перемещаем остальной контент в main-container
           mainContainer.appendChild(child.cloneNode(true));
           if (child.parentNode === root) {
             root.removeChild(child);
           }
         }
       });
-      
-      // Добавляем контейнеры в DOM
+  
       root.prepend(mainContainer);
     }
     
@@ -80,12 +70,10 @@ const Checkbox = () => {
             <li><Link to="/shop" className="side-nav-link" onClick={toggleMenu}>Магазин</Link></li>
             <li><Link to="/contacts" className="side-nav-link" onClick={toggleMenu}>Контакты</Link></li>
           </ul>
-          <div className="side-menu-buttons">
-          </div>
         </div>
       </div>
       
-      {isOpen && <div className="overlay" onClick={toggleMenu} />}
+      <div className="overlay" onClick={toggleMenu} />
     </>
   );
 }

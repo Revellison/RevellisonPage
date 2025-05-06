@@ -1,6 +1,3 @@
-
-
-
 .overlay {
   position: fixed;
   top: 0;
@@ -9,8 +6,15 @@
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 998;
+  transition: all 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
 }
 
+body.menu-open .overlay {
+  opacity: 1;
+  visibility: visible;
+}
 
 .side-menu {
   position: fixed;
@@ -32,8 +36,7 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  background-color: #131c24;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  background-color: #131c24ef;
   position: relative;
   overflow: hidden;
 }
@@ -156,28 +159,6 @@ body {
 }
 
 
-.main-container {
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 100%;
-  min-height: 100vh;
-  transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
-  transform-origin: center center;
-  will-change: transform;
-}
-
-
-body.menu-open .main-container {
-  transform: scale(0.90);
-  background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-}
-
 body.menu-open .logo-container {
   opacity: 0;
   visibility: hidden;
@@ -191,10 +172,6 @@ body.menu-open .header-buttons {
   transform: translateY(-20px);
   transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
 }
-
-
-
-
 
 .menu-controls {
   position: fixed;

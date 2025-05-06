@@ -18,5 +18,7 @@ export default defineConfig({
   // base: '/RevellisonPage/', // Если используете GitHub Pages без кастомного домена (замените на имя вашего репозитория)
   server: {
     historyApiFallback: true,
+    host: true,
+    port: 3000,
   }
 })
