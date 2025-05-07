@@ -31,6 +31,10 @@ body {
     justify-content: center;
  }
 
+.image-section img {
+    animation: levitate 3s ease-in-out infinite;
+}
+
  .arrow-container {
     display: flex;
     align-items: left;
@@ -69,6 +73,15 @@ body {
 
 .buttons-container:hover .arrow-container svg {
     transform: translateX(10px);
+}
+
+@keyframes levitate {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 @media (max-width: 1200px) {

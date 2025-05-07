@@ -24,38 +24,6 @@ const Portfolio = () => {
         image: 'https://via.placeholder.com/400x300',
         description: 'Нативное мобильное приложение для iOS и Android с синхронизацией данных.',
         category: 'Мобильная разработка'
-      },
-      {
-        id: 3,
-        title: 'Корпоративный сайт',
-        price: 'от 30000',
-        image: 'https://via.placeholder.com/400x300',
-        description: 'Представительский сайт компании с адаптивным дизайном и панелью администратора.',
-        category: 'Веб-разработка'
-      },
-      {
-        id: 4,
-        title: 'Дизайн логотипа',
-        price: 'от 15000',
-        image: 'https://via.placeholder.com/400x300',
-        description: 'Разработка уникального логотипа с учетом фирменного стиля и целевой аудитории.',
-        category: 'Дизайн'
-      },
-      {
-        id: 5,
-        title: 'CRM-система',
-        price: 'от 80000',
-        image: 'https://via.placeholder.com/400x300',
-        description: 'Система управления взаимоотношениями с клиентами, адаптированная под ваш бизнес.',
-        category: 'Веб-разработка'
-      },
-      {
-        id: 6,
-        title: 'UI/UX дизайн',
-        price: 'от 25000',
-        image: 'https://via.placeholder.com/400x300',
-        description: 'Проектирование пользовательских интерфейсов с фокусом на удобство использования.',
-        category: 'Дизайн'
       }
     ];
 
