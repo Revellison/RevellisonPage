@@ -12,35 +12,6 @@ const Checkbox = () => {
   useEffect(() => {
     const body = document.body;
     
-    let mainContainer = document.querySelector('.main-container');
-    
-    if (!mainContainer) {
-      const root = document.getElementById('root') || document.body;
-      
-      const menuContainer = document.createElement('div');
-      menuContainer.className = 'menu-controls';
-      
-      mainContainer = document.createElement('div');
-      mainContainer.className = 'main-container';
-      
-      const allChildren = Array.from(root.children);
-  
-      allChildren.forEach(child => {
-        if (child.classList.contains('side-menu') || 
-            child.classList.contains('overlay') || 
-            child === document.querySelector('.hamburger')?.parentNode) {
-
-        } else {
-          mainContainer.appendChild(child.cloneNode(true));
-          if (child.parentNode === root) {
-            root.removeChild(child);
-          }
-        }
-      });
-  
-      root.prepend(mainContainer);
-    }
-    
     if (isOpen) {
       body.classList.add('menu-open');
     } else {
