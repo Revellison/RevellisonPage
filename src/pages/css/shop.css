@@ -1,10 +1,27 @@
-.portfolio-container {
+.shop-container {
   padding: 2rem;
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
   box-sizing: border-box;
 }
+
+.products-grid {
+  animation: scaleIn 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
 
 .portfolio-title {
   font-size: 2.5rem;
@@ -13,7 +30,7 @@
 }
 
 .filters-container {
-  display: flex;
+  display: none;
   justify-content: space-between;
   margin-bottom: 2rem;
   position: sticky;
@@ -184,14 +201,14 @@
   }
 }
 
-.projects-grid {
+.products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
 }
 
-.no-projects {
+.no-products {
   text-align: center;
   padding: 2rem;
   color: #666;
@@ -227,7 +244,7 @@
 }
 
 @media (max-width: 768px) {
-  .portfolio-container {
+  .shop-container {
     padding: 1rem;
   }
 

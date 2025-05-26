@@ -3,17 +3,17 @@ import ProductCard from '../components/ProductСard';
 import shopData from '../data/shopData/data.json';
 import '../pages/css/shop.css';
 
-const Portfolio = () => {
-  const [projects, setProjects] = useState([]);
-  const [filteredProjects, setFilteredProjects] = useState([]);
+const Shop = () => {
+  const [products, setProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
   const [activeCategories, setActiveCategories] = useState(['Все']);
   const [isFilterMenuOpen, setIsFilterMenuOpen] = useState(false);
   const [activeSorts, setActiveSorts] = useState([]);
   const filterRef = useRef(null);
 
   useEffect(() => {
-    setProjects(shopData);
-    setFilteredProjects(shopData);
+    setProducts(shopData);
+    setFilteredProducts(shopData);
   }, []);
 
   useEffect(() => {
@@ -55,7 +55,7 @@ const Portfolio = () => {
     }
   ];
 
-  const filterProjects = (category) => {
+  const filterProducts = (category) => {
     if (category === 'Все') {
       setActiveCategories(['Все']);
     } else {
@@ -72,13 +72,13 @@ const Portfolio = () => {
 
   useEffect(() => {
     if (activeCategories.includes('Все')) {
-      setFilteredProjects(projects);
+      setFilteredProducts(products);
     } else {
-      setFilteredProjects(projects.filter(project => 
-        activeCategories.includes(project.category)
+      setFilteredProducts(products.filter(product => 
+        activeCategories.includes(product.category)
       ));
     }
-  }, [activeCategories, projects]);
+  }, [activeCategories, products]);
 
   const handleSort = (option) => {
     setActiveSorts(prev => {
@@ -93,11 +93,11 @@ const Portfolio = () => {
 
   useEffect(() => {
     if (activeSorts.length === 0) {
-      setFilteredProjects(projects);
+      setFilteredProducts(products);
       return;
     }
 
-    const sortedProjects = [...projects].sort((a, b) => {
+    const sortedProducts = [...products].sort((a, b) => {
       for (const sortOption of activeSorts) {
         let comparison = 0;
         switch (sortOption) {
@@ -125,8 +125,8 @@ const Portfolio = () => {
       return 0;
     });
 
-    setFilteredProjects(sortedProjects);
-  }, [activeSorts, projects]);
+    setFilteredProducts(sortedProducts);
+  }, [activeSorts, products]);
 
   const handleFilterClick = (e) => {
     e.stopPropagation();
@@ -139,7 +139,7 @@ const Portfolio = () => {
   };
 
   return (
-    <div style={{marginTop: 'var(--header-height)'}} className="portfolio-container">
+    <div style={{marginTop: 'var(--header-height)'}} className="shop-container">
       <div 
         ref={filterRef}
         className="filters-container"
@@ -192,7 +192,7 @@ const Portfolio = () => {
                 {categories.map(category => (
                   <button
                     key={category}
-                    onClick={(e) => handleOptionClick(e, () => filterProjects(category))}
+                    onClick={(e) => handleOptionClick(e, () => filterProducts(category))}
                     className={`filter-option ${activeCategories.includes(category) ? 'active' : ''}`}
                   >
                     {category}
@@ -226,28 +226,28 @@ const Portfolio = () => {
         )}
       </div>
       
-      <div className="projects-grid">
-        {filteredProjects.map(project => (
+      <div className="products-grid">
+        {filteredProducts.map(product => (
           <ProductCard
-            key={project.id}
-            title={project.title}
-            price={project.price}
-            image={project.image}
-            description={project.description}
-            category={project.category}
-            duration={project.duration}
-            complexity={project.complexity}
+            key={product.id}
+            title={product.title}
+            price={product.price}
+            image={product.image}
+            description={product.description}
+            category={product.category}
+            duration={product.duration}
+            complexity={product.complexity}
           />
         ))}
       </div>
       
-      {filteredProjects.length === 0 && (
-        <div className="no-projects">
-          <p className="no-projects-text">Проекты не найдены</p>
+      {filteredProducts.length === 0 && (
+        <div className="no-products">
+          <p className="no-products-text">Товары не найдены</p>
         </div>
       )}
     </div>
   );
 };
 
-export default Portfolio;
+export default Shop;

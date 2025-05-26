@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import '../components/css/burger.css';
 import { Link } from 'react-router-dom';
+import ContactsModal from './ContactsModal';
 
 const Checkbox = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isContactsModalOpen, setIsContactsModalOpen] = useState(false);
   
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -39,12 +41,25 @@ const Checkbox = () => {
             <li><Link to="/" className="side-nav-link" onClick={toggleMenu}>Главная</Link></li>
             <li><Link to="/portfolio" className="side-nav-link" onClick={toggleMenu}>Портфолио</Link></li>
             <li><Link to="/shop" className="side-nav-link" onClick={toggleMenu}>Магазин</Link></li>
-            <li><Link to="/contacts" className="side-nav-link" onClick={toggleMenu}>Контакты</Link></li>
+            <li><button 
+              className="side-nav-link"
+              onClick={() => {
+                setIsContactsModalOpen(true);
+                toggleMenu();
+              }}
+            >
+              Контакты
+            </button></li>
           </ul>
         </div>
       </div>
       
       <div className="overlay" onClick={toggleMenu} />
+
+      <ContactsModal 
+        isOpen={isContactsModalOpen}
+        onClose={() => setIsContactsModalOpen(false)}
+      />
     </>
   );
 }

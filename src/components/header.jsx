@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import ContactsModal from './ContactsModal';
 import '../components/css/header.css';
 import logoHeader from '../assets/logo_header.png';
 import Checkbox from './burger';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isContactsModalOpen, setIsContactsModalOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 100);
+      setIsScrolled(window.scrollY > 50);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -33,13 +35,23 @@ const Header = () => {
         </nav>
 
         <div className="header-buttons">
-          <Link to="/contacts" className="header-button-buy">Контакты</Link>
+          <button 
+            className="header-button-contacts"
+            onClick={() => setIsContactsModalOpen(true)}
+          >
+            Контакты
+          </button>
         </div>
         
         <div className="mobile-menu">
           <Checkbox />
         </div>
       </div>
+
+      <ContactsModal 
+        isOpen={isContactsModalOpen}
+        onClose={() => setIsContactsModalOpen(false)}
+      />
     </header>
   );
 };
