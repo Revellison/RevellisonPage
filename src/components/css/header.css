@@ -4,7 +4,32 @@
   left: 0;
   width: 100%;
   background-color: transparent;
-  z-index: 1000;
+  z-index: 99;
+  transition: all 0.3s ease;
+}
+
+.header-scrolled {
+  background-color: #000000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.header-scrolled .logo {
+  color: #ffffff;
+}
+
+.header-scrolled .nav-link {
+  color: #ffffff;
+}
+
+.header-scrolled .header-button-buy {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.header-scrolled .header-button-buy:hover {
+  background-color: transparent;
+  color: #ffffff;
 }
 
 .header-container {

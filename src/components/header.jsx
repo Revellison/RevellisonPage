@@ -1,11 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../components/css/header.css';
 import logoHeader from '../assets/logo_header.png';
 import Checkbox from './burger';
+
 const Header = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 100);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <header className="header">
+    <header className={`header ${isScrolled ? 'header-scrolled' : ''}`}>
       <div className="header-container">
         <div className="logo-container">
           <img src={logoHeader} alt="logo" className="logo" />
@@ -21,8 +33,7 @@ const Header = () => {
         </nav>
 
         <div className="header-buttons">
-          <Link to="/contacts" className="header-button-contacts">Контакты</Link>
-          <Link to="/shop" className="header-button-buy">Заказать</Link>
+          <Link to="/contacts" className="header-button-buy">Контакты</Link>
         </div>
         
         <div className="mobile-menu">

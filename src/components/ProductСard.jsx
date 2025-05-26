@@ -1,28 +1,39 @@
-import React, { useState } from 'react';
-import '../components/css/ProductCard.css';
+import React, { useState, useEffect } from 'react';
+import './css/ProductCard.css';
 
-const ProductCard = ({ title, price, image, description, category }) => {
+const ProductCard = ({ title, price, image, description, category, duration, complexity }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isModalOpen]);
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
 
   return (
     <>
-      <div className="product-card">
-        <img src={image} alt={title} className="product-image" />
+      <div onClick={handleOpenModal} style={{cursor: 'pointer'}} className="product-card">
+        <img src={image} alt={title}  style={{loading: 'lazy'}} className="product-image" />
         <div className="product-content">
           <h3 className="product-title">{title}</h3>
           <span className="product-category">{category}</span>
           <p className="product-description">{description}</p>
           <div className="product-footer">
             <span className="product-price">{price} ₽</span>
-            <button 
-              onClick={openModal}
-              className="details-button"
-            >
-              Подробнее
-            </button>
           </div>
         </div>
       </div>
@@ -34,7 +45,7 @@ const ProductCard = ({ title, price, image, description, category }) => {
               <div className="modal-header">
                 <h2 className="modal-title">{title}</h2>
                 <button 
-                  onClick={closeModal}
+                  onClick={handleCloseModal}
                   className="close-button"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" className="close-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -60,7 +71,7 @@ const ProductCard = ({ title, price, image, description, category }) => {
                   В корзину
                 </button>
                 <button 
-                  onClick={closeModal}
+                  onClick={handleCloseModal}
                   className="cancel-button"
                 >
                   Закрыть
