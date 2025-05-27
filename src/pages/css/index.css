@@ -51,6 +51,7 @@ body {
     flex-direction: row;
     align-items: center;
     gap: 10px;
+    margin-top: 20px;
 }
 
 .primary-button {
@@ -64,6 +65,7 @@ body {
     transition: all 0.45s cubic-bezier(0.25, 0.1, 0.25, 1);
     cursor: pointer;
     border: 3px dashed transparent;
+
 }
 
 .primary-button:hover {

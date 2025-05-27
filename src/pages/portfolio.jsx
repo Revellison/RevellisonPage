@@ -1,49 +1,51 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import PortfolioCard from '../components/PortfolioCard';
+import portfolioData from '../data/portfolioData/data.json';
 import './css/portfolio.css';
 
-function Shop() {
-  const products = [
-    {
-      id: 1,
-      name: 'Веб-сайт "Базовый"',
-      price: 30000,
-      description: 'Простой одностраничный сайт с адаптивным дизайном'
-    },
-    {
-      id: 2,
-      name: 'Веб-сайт "Бизнес"',
-      price: 60000,
-      description: 'Многостраничный сайт с админ-панелью и формами обратной связи'
-    },
-    {
-      id: 3,
-      name: 'Инфографика',
-      price: 5000,
-      description: 'Создание информативной графики для вашего бизнеса'
-    },
-    {
-      id: 4,
-      name: 'Видеомонтаж',
-      price: 10000,
-      description: 'Профессиональный монтаж видео до 5 минут'
+function Portfolio() {
+  const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    try {
+      setProjects(portfolioData);
+      setLoading(false);
+    } catch (err) {
+      setError(err.message);
+      setLoading(false);
     }
-  ];
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="portfolio-container">
+        <div className="loading">Загрузка проектов...</div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="portfolio-container">
+        <div className="error">Ошибка: {error}</div>
+      </div>
+    );
+  }
 
   return (
-    <div className="shop-container">
-      <h1 className="shop-title">Наши услуги</h1>
+    <div className="portfolio-container">
       
-      <div className="products-grid">
-        {products.map(product => (
-          <div key={product.id} className="product-card">
-            <h2 className="product-name">{product.name}</h2>
-            <p className="product-description">{product.description}</p>
-            <p className="product-price">{product.price} ₽</p>
-            <button className="order-button">
-              Заказать
-            </button>
-          </div>
+      <div className="projects-grid">
+        {projects.map(project => (
+          <PortfolioCard
+            key={project.id}
+            title={project.name}
+            description={project.description}
+            image={project.image}
+          />
         ))}
       </div>
       
@@ -56,4 +58,4 @@ function Shop() {
   );
 }
 
-export default Shop;
+export default Portfolio;

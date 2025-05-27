@@ -24,7 +24,6 @@ const ContactsModal = ({ isOpen, onClose }) => {
         <div className="social-links">
           <a href="https://github.com/revellison" className="social-link">GitHub</a>
           <a href="https://twitter.com/revellison" className="social-link">Twitter</a>
-          <a href="https://t.me/revellison" className="social-link">Telegram</a>
         </div>
       </div>
     </div>

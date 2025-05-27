@@ -31,7 +31,7 @@
   padding: 0;
 }
 
-.products-grid, .content-wrapper {
+.products-grid, .content-wrapper, .projects-grid {
   animation: scaleIn 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
