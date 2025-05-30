@@ -54,7 +54,7 @@ const ProductCard = ({ title, price, image, description, category, duration, com
                 </button>
               </div>
               
-              <img src={image} alt={title} className="modal-image" />
+              <img src={image} alt={title} style={{loading: 'lazy'}} className="modal-image" />
               
               <div className="modal-info">
                 <span className="modal-category">{category}</span>
