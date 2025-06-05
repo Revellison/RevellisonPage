@@ -68,7 +68,7 @@ const ProductCard = ({ title, price, image, description, category, duration, com
               
               <div className="modal-actions">
                 <button className="cart-button">
-                  В корзину
+                  Купить
                 </button>
                 <button 
                   onClick={handleCloseModal}

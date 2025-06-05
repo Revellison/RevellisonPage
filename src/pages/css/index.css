@@ -4,10 +4,19 @@ body {
 
 .text-section {
     font-size: 24px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px 40px;
+    background-color: #ffffff05;
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
 }
 
 .subtitle {
-    max-width: 530px;
+    padding-top: 10px;    
+    color: #cfcfcf;
+    text-align: center;
 }
 
 .main-container {
@@ -119,6 +128,10 @@ body {
     
     .text-section {
         font-size: 20px;
+        background-color: transparent;
+        backdrop-filter: none;
+        border-radius: 15px;
+        padding: 0px 0px;
     }
     
     .subtitle {
@@ -151,10 +164,9 @@ body {
     }
     
     .subtitle {
-        max-width: 90%;
+        max-width: 100%;
         text-align: center;
         margin: 0 auto;
-        margin-top: 20px;
     }
     
     .buttons-container {

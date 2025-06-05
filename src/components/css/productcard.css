@@ -12,6 +12,18 @@
     z-index: 1;
 }
 
+.type-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.type-container p {
+    margin-bottom: 1.2rem;
+}
+
+
 .product-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
@@ -387,4 +399,18 @@
         padding: 0.5rem 0.8rem;
         font-size: 0.875rem;
     }
+}
+
+.product-type {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+    font-weight: 500;
+}
+
+.modal-type {
+    color: #666;
+    font-size: 1rem;
+    margin: 0.5rem 0 1.5rem;
+    font-weight: 500;
 }

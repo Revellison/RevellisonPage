@@ -45,6 +45,7 @@ function Portfolio() {
             title={project.name}
             description={project.description}
             image={project.image}
+            type={project.type}
           />
         ))}
       </div>

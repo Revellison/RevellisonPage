@@ -1,16 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import TechCarousel from '../components/TechCarousel';
+import InteractiveBackground from '../components/InteractiveBackground';
 import '../pages/css/index.css';
-import mockupImage from '../assets/mockup.png';
 
 function Index() {
   return (
     <div className="main-container">
+      <InteractiveBackground />
       <div className="content-wrapper">
         <div className="text-section">
           <h1 className="main-title">Разработка <Link to="/shop" style={{textDecoration: 'none', color: 'black', backgroundColor: 'white', borderRadius: '10px', padding: '5px', paddingLeft: '10px', paddingRight: '10px', whiteSpace: 'nowrap'}}>IT-продуктов</Link></h1>
-          <h2 className="subtitle">веб-сайты, приложения и цифровые решения под ключ.</h2>
+          <h2 className="subtitle">цифровые решения под ключ.</h2>
           <div className="buttons-container">
             <Link to="/shop" className="primary-button">
               Выбрать продукт
@@ -23,15 +24,8 @@ function Index() {
             </div>
           </div>
         </div>
-
-        <div className="image-section">
-            <div className="image-container">
-              <img src={mockupImage} alt="Изображение" className="main-image" />
-            </div>
-          </div>
-        </div>
       </div>
-
+    </div>
   );
 }
 

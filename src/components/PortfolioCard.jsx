@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './css/ProductCard.css';
 
-const PortfolioCard = ({ title, image, description }) => {
+const PortfolioCard = ({ title, image, description, type }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
@@ -30,6 +30,7 @@ const PortfolioCard = ({ title, image, description }) => {
         <img src={image} alt={title} style={{loading: 'lazy'}} className="product-image" />
         <div className="product-content">
           <h3 className="product-title">{title}</h3>
+          <span className="product-category">{type}</span>
           <p className="product-description">{description}</p>
         </div>
       </div>
