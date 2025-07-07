@@ -12,18 +12,25 @@ const ContactsModal = ({ isOpen, onClose }) => {
         <h2 className="contacts-modal-title">Контакты</h2>
         
         <div className="contacts-container">
-          <div className="contact-item">
+          <div
+            className="contact-item"
+            style={{ cursor: 'pointer' }}
+            onClick={() => {
+              navigator.clipboard.writeText('revellison@mail.ru');
+            }}
+            title="Скопировать email"
+          >
             <i className="contact-icon">✉️</i>
             <div className="contact-info">
-              <h3>Email</h3>
-              <p>contact@revellison.com</p>
+              <h3>Email - нажмите для копирования</h3>
+              <p>revellison@mail.ru</p>
             </div>
           </div>
         </div>
 
         <div className="social-links">
           <a href="https://github.com/revellison" className="social-link">GitHub</a>
-          <a href="https://twitter.com/revellison" className="social-link">Twitter</a>
+          <a href="https://x.com/Revell1s0n" className="social-link">X</a>
         </div>
       </div>
     </div>

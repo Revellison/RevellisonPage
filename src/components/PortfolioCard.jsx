@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './css/ProductCard.css';
+import { href } from 'react-router-dom';
 
-const PortfolioCard = ({ title, image, description, type }) => {
+const PortfolioCard = ({ title, image, description, type, link}) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
@@ -23,6 +24,7 @@ const PortfolioCard = ({ title, image, description, type }) => {
   const handleCloseModal = () => {
     setIsModalOpen(false);
   };
+
 
   return (
     <>
